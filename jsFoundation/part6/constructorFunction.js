@@ -29,27 +29,41 @@
 // let myPersion = new Persion("Upendra", 45, "Patna")
 // console.log(myPersion);
 
-function Tea(type, price){
-    this.type = type
-    this.price = price
-    this.describe = function(){
-        return `This is a cup of tea of type ${this.type} and price is ${this.price}`
+// function Tea(type, price){
+//     this.type = type
+//     this.price = price
+//     this.describe = function(){
+//         return `This is a cup of tea of type ${this.type} and price is ${this.price}`
+//     }
+
+// }
+
+// let myTea = new Tea("Lemon Tea", 20)
+// console.log(myTea.describe());
+
+
+// function Animal(species){
+//     this.species = species
+// }
+
+// Animal.prototype.sound = function(){
+//     return `${this.species} makes a sound`
+// }
+
+// let dog = new Animal("Dog")
+// console.log(dog.sound());
+
+// let cat = new Animal("Cat")
+// console.log(cat.sound());
+
+function Drink(name){
+    if (!new.target) {
+        throw new Error("Drink must be called with new keyword");   
     }
-
+    this.name = name;
 }
 
-let myTea = new Tea("Lemon Tea", 20)
-console.log(myTea.describe());
-
-
-function Animal(species){
-    this.species = species
-}
-
-Animal.prototype.sound = function(){
-    return `${this.species} makes a sound`
-}
-
-let dog = new Animal("Dog")
-console.log(dog.sound());
-
+let tea = new Drink("tea");
+let cofee = new Drink("Cofee");
+console.log(tea);
+console.log(cofee);
