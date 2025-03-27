@@ -36,4 +36,17 @@ console.log(myArray.upendra());
 let myNewArray = [1, 2, 3, 4, 5, 6];
 console.log(myNewArray.upendra());
 
+class Vehicle {
+    constructor(make, model, year){
+        this.make =make
+        this.model = model
+        this.year = year
+    }
 
+    start(){
+        return `${this.model} is a car from ${this.make}`
+    }
+}
+
+let myCar = new Vehicle("Toyota", "Camry", 2021)
+console.log(myCar.start());
