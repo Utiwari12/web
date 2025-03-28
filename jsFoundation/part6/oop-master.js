@@ -141,3 +141,40 @@ class Calculator {
     }
 }
 
+//let miniCalculator = new Calculator();
+//console.log(miniCalculator.add(2, 3));
+
+//console.log(Calculator.add(2, 3));
+//console.log(Calculator.subtract(2, 3));
+
+// Getters and setters
+
+class Employee {
+    #salary;  // to hide the salary
+    constructor(name, salary){
+        this.name = name;
+        this.#salary = salary;
+    }
+    get salary(){
+        //return this._salary
+        return `You are not allowed to see salary`;
+    }
+
+    set salary(value){
+        if(value <0){
+            console.error("Invalid Salary");
+           // throw new Error("Salary cannot be negative");
+        }else{
+            this._salary = value
+        }
+    }
+}
+
+let emp = new Employee("Upendra", 50000);
+console.log(emp);
+console.log(emp._salary);
+console.log(emp.salary);
+
+emp.salary = -60000;
+console.log(emp);
+
