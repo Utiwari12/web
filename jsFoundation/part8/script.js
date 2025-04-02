@@ -58,6 +58,28 @@ addEventListener("click", function () {
 
 //example 6
 document.getElementById("clickMeButton").
-addEventListener("click", function (){
+addEventListener("dbclick", function (){
     alert("You clicked the button");
 });
+
+//example 7
+document.getElementById("teaList").
+addEventListener("click", function(event){
+    //console.log(event.target);
+    if(event.target && event.target.matches(".teaItem")){
+        alert("Selected tea: " + event.target.textContent);
+    };
+
+})
+
+//example 8 Form handling
+document.getElementById("feedbackForm").
+addEventListener("submit", function(event){
+    //alert("Thank you for your feedback!");
+    event.preventDefault();
+    let feedback = document.getElementById("feedbackInput").value;
+    console.log(feedback);
+    document.getElementById("feedbackDisplay").textContent = `Feedback is : ${feedback}`;
+})
+
+//example 9 DOM Content Loaded
