@@ -83,3 +83,14 @@ addEventListener("submit", function(event){
 })
 
 //example 9 DOM Content Loaded
+document.addEventListener("DOMContentLoaded", function(){
+    document.getElementById("domStatus").textContent = 
+    "DOM fully loaded";
+});
+
+//example 10 CSS Class Manupulation
+document.getElementById("toggleHighlight").
+addEventListener("click", function(){
+    let descriptionText = document.getElementById("descriptionText");
+    descriptionText.classList.toggle("highlight");
+})
